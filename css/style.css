@@ -1,4 +1,6 @@
-/* 1. Base Reset & Variables */
+/* ==========================================
+   1. Base Reset & Variables
+   ========================================== */
 * {
   padding: 0;
   margin: 0;
@@ -15,53 +17,63 @@
   --nutmeg: hsl(14, 45%, 36%);
   --dark-raspberry: hsl(332, 51%, 32%);
   --rose-white: hsl(330, 100%, 98%);
+  --link-color: hsl(228, 45%, 44%);
 
   /* Fonts */
   --ff-outfit: "Outfit", sans-serif;
   --ff-young-serif: "Young Serif", serif;
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
 }
 
+/* Base Layout (Mobile-First Default) */
 body {
   background-color: var(--eggshell);
   color: var(--wenge-brown);
   font-family: var(--ff-outfit);
-  font-size: 16px;
-  display: grid;
-  place-content: center;
-  min-height: 100vh;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* 2. Layout & Main Block (Recipe Card) */
+/* ==========================================
+   2. Layout & Main Block (Mobile-First)
+   ========================================== */
 .recipe-container {
   position: static;
 }
 
 .recipe-card {
-  max-width: 736px;
+  max-width: 46rem; /* Equivalent to 736px */
   background-color: var(--white);
-  margin: 7.75rem 2rem;
-  border-radius: 1.5rem;
-  padding: 2.5rem;
+  margin-block: 0;
+  margin-inline: auto;
+  border-radius: 0;
+  padding: 0;
 }
 
 .recipe-card__image {
   width: 100%;
-  border-radius: 0.75rem;
+  border-radius: 0;
   display: block;
 }
 
 .recipe-card__header {
-  margin-bottom: 2rem;
+  padding-inline: 2rem;
+  padding-block-start: 2.5rem;
+  margin-block-end: 2rem;
 }
 
 .recipe-card__title {
   font-family: var(--ff-young-serif);
   color: var(--dark-charcoal);
-  font-size: 2.5rem;
-  font-weight: 400;
+  /* Fluid Typography using clamp(min, val, max) */
+  font-size: clamp(2.25rem, 5vw, 2.5rem);
+  font-weight: var(--fw-regular);
   line-height: 1;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
+  margin-block-end: 1.5rem;
 }
 
 .recipe-card__description {
@@ -71,18 +83,18 @@ body {
 .recipe-card__divider {
   border: none;
   border-top: 1px solid var(--light-grey);
-  margin-bottom: 2rem;
+  margin-inline: 2rem;
+  margin-block-end: 2rem;
 }
 
 .recipe-card__section {
-  margin-bottom: 2rem;
+  padding-inline: 2rem;
+  margin-block-end: 2rem;
 }
 
-.recipe-card__section:not(.recipe-card__section--prep-time) {
-  position: static;
-}
-
-/* 3. Preparation Time Component */
+/* ==========================================
+   3. Preparation Time Component
+   ========================================== */
 .prep-time {
   background-color: var(--rose-white);
   padding: 1.75rem;
@@ -92,8 +104,8 @@ body {
 .prep-time__title {
   color: var(--dark-raspberry);
   font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-weight: var(--fw-semi-bold);
+  margin-block-end: 1rem;
 }
 
 .prep-time__list {
@@ -101,8 +113,7 @@ body {
 }
 
 .prep-time__item {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
+  margin-block-end: 0.5rem;
 }
 
 .prep-time__item::marker {
@@ -110,17 +121,19 @@ body {
 }
 
 .prep-time__label {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--wenge-brown);
 }
 
-/* 4. Ingredients Component */
+/* ==========================================
+   4. Ingredients Component
+   ========================================== */
 .ingredients__title {
   font-family: var(--ff-young-serif);
   color: var(--nutmeg);
   font-size: 1.75rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
+  font-weight: var(--fw-regular);
+  margin-block-end: 1.5rem;
 }
 
 .ingredients__list {
@@ -128,56 +141,57 @@ body {
 }
 
 .ingredients__item {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
+  margin-block-end: 0.5rem;
 }
 
 .ingredients__item::marker {
   color: var(--nutmeg);
 }
 
-/* 5. Instructions Component */
+/* ==========================================
+   5. Instructions Component
+   ========================================== */
 .instructions__title {
   font-family: var(--ff-young-serif);
   color: var(--nutmeg);
   font-size: 1.75rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
+  font-weight: var(--fw-regular);
+  margin-block-end: 1.5rem;
 }
 
 .instructions__list {
   list-style-position: outside;
-  margin-left: 1.5rem;
+  margin-inline-start: 1.5rem;
 }
 
 .instructions__item {
-  padding-left: 1rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.5;
+  padding-inline-start: 1rem;
+  margin-block-end: 0.75rem;
 }
 
 .instructions__item::marker {
   color: var(--nutmeg);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .instructions__step-title {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--wenge-brown);
 }
 
-/* 6. Nutrition Component & Table */
+/* ==========================================
+   6. Nutrition Component & Table
+   ========================================== */
 .nutrition__title {
   font-family: var(--ff-young-serif);
   color: var(--nutmeg);
   font-size: 1.75rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
+  font-weight: var(--fw-regular);
+  margin-block-end: 1.5rem;
 }
 
 .nutrition__description {
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
+  margin-block-end: 1.5rem;
 }
 
 .recipe-table {
@@ -202,62 +216,64 @@ body {
   border-bottom: 1px solid var(--light-grey);
 }
 
-.recipe-table__body .recipe-table__row:last-child {
-  border-bottom: none;
-}
-
 .recipe-table__cell {
-  padding: 0.75rem 2rem;
+  padding-block: 0.75rem;
+  padding-inline: 2rem;
 }
 
 .recipe-table__cell--value {
   color: var(--nutmeg);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
-/* 7. Attribution Footer */
+/* ==========================================
+   7. Attribution Footer
+   ========================================== */
 .attribution {
-  font-size: 11px;
+  font-size: 0.7rem; /* ~11px using relative rem units */
   text-align: center;
   padding: 1rem;
 }
 
 .attribution__link {
-  color: hsl(228, 45%, 44%);
+  color: var(--link-color);
 }
 
-/* 8. Responsive Design (Mobile) */
-@media (max-width: 650px) {
+/* ==========================================
+   8. Desktop Layout Enhancements (Mobile-First)
+   ========================================== */
+@media (min-width: 46em) {
+  /* ~736px / 16 = 46em */
   body {
-    display: block;
+    display: grid;
+    place-content: center;
+    min-height: 100dvh; /* Dynamic Viewport Height for mobile browsers support */
+    padding-block: 7.75rem;
   }
 
   .recipe-card {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
   }
 
   .recipe-card__image {
-    border-radius: 0;
+    border-radius: 0.75rem;
+  }
+
+  .recipe-card__header,
+  .recipe-card__section {
+    padding-inline: 0;
   }
 
   .recipe-card__header {
-    padding: 2.5rem 2rem 0 2rem;
-    margin-bottom: 2rem;
+    padding-block-start: 0;
   }
 
   .recipe-card__title {
-    margin-top: 0;
-    font-size: 2.25rem;
-  }
-
-  .recipe-card__section {
-    padding: 0 2rem;
+    margin-block-start: 2.5rem;
   }
 
   .recipe-card__divider {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-inline: 0;
   }
 }
