@@ -1,6 +1,4 @@
-/* ==========================================
-   1. Base Reset & Variables
-   ========================================== */
+/*    1. Base Reset & Variables    */
 * {
   padding: 0;
   margin: 0;
@@ -38,9 +36,7 @@ body {
   line-height: 1.5;
 }
 
-/* ==========================================
-   2. Layout & Main Block (Mobile-First)
-   ========================================== */
+/*    2. Layout & Main Block (Mobile-First)    */
 .recipe-container {
   position: static;
 }
@@ -92,9 +88,7 @@ body {
   margin-block-end: 2rem;
 }
 
-/* ==========================================
-   3. Preparation Time Component
-   ========================================== */
+/*    3. Preparation Time Component    */
 .prep-time {
   background-color: var(--rose-white);
   padding: 1.75rem;
@@ -125,9 +119,7 @@ body {
   color: var(--wenge-brown);
 }
 
-/* ==========================================
-   4. Ingredients Component
-   ========================================== */
+/*    4. Ingredients Component    */
 .ingredients__title {
   font-family: var(--ff-young-serif);
   color: var(--nutmeg);
@@ -148,9 +140,7 @@ body {
   color: var(--nutmeg);
 }
 
-/* ==========================================
-   5. Instructions Component
-   ========================================== */
+/* 5. Instructions Component */
 .instructions__title {
   font-family: var(--ff-young-serif);
   color: var(--nutmeg);
@@ -179,9 +169,7 @@ body {
   color: var(--wenge-brown);
 }
 
-/* ==========================================
-   6. Nutrition Component & Table
-   ========================================== */
+/*    6. Nutrition Component & Table    */
 .nutrition__title {
   font-family: var(--ff-young-serif);
   color: var(--nutmeg);
@@ -226,9 +214,7 @@ body {
   font-weight: var(--fw-bold);
 }
 
-/* ==========================================
-   7. Attribution Footer
-   ========================================== */
+/*    7. Attribution Footer    */
 .attribution {
   font-size: 0.7rem; /* ~11px using relative rem units */
   text-align: center;
@@ -239,9 +225,7 @@ body {
   color: var(--link-color);
 }
 
-/* ==========================================
-   8. Desktop Layout Enhancements (Mobile-First)
-   ========================================== */
+/*    8. Desktop Layout Enhancements (Mobile-First)    */
 @media (min-width: 46em) {
   /* ~736px / 16 = 46em */
   body {
