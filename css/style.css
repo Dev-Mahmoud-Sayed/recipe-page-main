@@ -78,7 +78,7 @@ body {
 
 .recipe-card__divider {
   border: none;
-  border-top: 1px solid var(--light-grey);
+  border-top: 0.0625rem solid var(--light-grey);
   margin-inline: 2rem;
   margin-block-end: 2rem;
 }
@@ -97,7 +97,7 @@ body {
 
 .prep-time__title {
   color: var(--dark-raspberry);
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
   font-weight: var(--fw-semi-bold);
   margin-block-end: 1rem;
 }
@@ -123,7 +123,7 @@ body {
 .ingredients__title {
   font-family: var(--ff-young-serif);
   color: var(--nutmeg);
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
   font-weight: var(--fw-regular);
   margin-block-end: 1.5rem;
 }
@@ -144,7 +144,7 @@ body {
 .instructions__title {
   font-family: var(--ff-young-serif);
   color: var(--nutmeg);
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
   font-weight: var(--fw-regular);
   margin-block-end: 1.5rem;
 }
@@ -173,7 +173,7 @@ body {
 .nutrition__title {
   font-family: var(--ff-young-serif);
   color: var(--nutmeg);
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
   font-weight: var(--fw-regular);
   margin-block-end: 1.5rem;
 }
@@ -190,10 +190,10 @@ body {
 /* Accessible hidden caption */
 .visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.0625rem;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -201,7 +201,7 @@ body {
 }
 
 .recipe-table__row:not(:last-child) {
-  border-bottom: 1px solid var(--light-grey);
+  border-bottom: 0.0625rem solid var(--light-grey);
 }
 
 .recipe-table__cell {
